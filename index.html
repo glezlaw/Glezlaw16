@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge González, LL.M. | International Advisory</title>
+    <meta name="description" content="International advisory services for expatriates and businesses establishing in Spain. Services available in English and French.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0A2463;
+            --light-navy: #1E3A8A;
+            --gold: #D4AF37;
+            --dark-gold: #B8941F;
+            --light-gray: #F8F9FA;
+            --dark-gray: #374151;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0f2027 0%, #1a2c38 50%, #2c5364 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Fondo con patrón sutil */
+        .background-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: url('IMG_6824 (1) (1).jpg');
+            background-size: 400px;
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        /* Contenedor principal */
+        .main-container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        /* Logo con banderas - MEJORADO */
+        .logo-flags-container {
+            position: relative;
+            margin: 0 auto 3.5rem;
+            width: 220px;
+            height: 220px;
+            animation: fadeInScale 0.8s ease-out both;
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .main-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            background-color: var(--white);
+            padding: 8px;
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            from {
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            }
+        }
+        
+        .flag-left, .flag-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .flag-left {
+            left: -70px; /* Más separado que antes */
+        }
+        
+        .flag-right {
+            right: -70px; /* Más separado que antes */
+        }
+        
+        .flag-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s ease;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            min-width: 100px;
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        .flag-link:hover {
+            transform: translateY(-50%) scale(1.15);
+            background: rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .flag-emoji {
+            font-size: 2.8rem; /* Más grande */
+            margin-bottom: 0.4rem;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+        }
+        
+        .flag-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            opacity: 0.95;
+            white-space: nowrap;
+        }
+        
+        /* Títulos */
+        .main-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            animation: fadeInDown 0.8s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            font-style: italic;
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Credenciales tipo badge (como Claude) */
+        .credentials-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            animation: fadeIn 0.8s ease-out 0.8s both;
+        }
+        
+        .badge {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .badge:hover {
+            background: rgba(212, 175, 55, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        /* Dos columnas de texto - MEJORADO con animación */
+        .two-columns-text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto 4.5rem;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .text-column {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.4s ease;
+        }
+        
+        .text-column:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+        
+        .text-column h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .text-column p {
+            color: rgba(255, 255, 255, 0.92);
+            line-height: 1.8;
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .text-column p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Botones de idioma - MEJORADOS */
+        .language-buttons {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+            animation: fadeIn 0.8s ease-out 1.2s both;
+        }
+        
+        .lang-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--dark-gold) 100%);
+            color: var(--navy);
+            padding: 1.3rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            min-width: 280px;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .lang-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .lang-button:hover::before {
+            left: 100%;
+        }
+        
+        .lang-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5);
+        }
+        
+        .lang-button-emoji {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-top: 3rem;
+            animation: fadeIn 0.8s ease-out 1.4s both;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .two-columns-text {
+                gap: 3rem;
+                padding: 0 2rem;
+                max-width: 900px;
+            }
+            
+            .text-column {
+                padding: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.6rem;
+            }
+            
+            .two-columns-text {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+                gap: 3rem;
+            }
+            
+            .logo-flags-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .flag-left {
+                left: -60px;
+            }
+            
+            .flag-right {
+                right: -60px;
+            }
+            
+            .flag-emoji {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 30px 15px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+                margin-bottom: 3rem;
+            }
+            
+            .logo-flags-container {
+                width: 180px;
+                height: 180px;
+                margin-bottom: 3rem;
+            }
+            
+            /* En móvil, banderas debajo del logo */
+            .flag-left, .flag-right {
+                position: relative;
+                top: 0;
+                transform: none;
+                margin: 1rem;
+            }
+            
+            .flag-left {
+                left: 0;
+            }
+            
+            .flag-right {
+                right: 0;
+            }
+            
+            .flags-row {
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .flag-link {
+                padding: 0.9rem;
+                min-width: 110px;
+            }
+            
+            .flag-link:hover {
+                transform: scale(1.1);
+            }
+            
+            .text-column {
+                padding: 2rem;
+            }
+            
+            .text-column h3 {
+                font-size: 1.7rem;
+            }
+            
+            .credentials-badges {
+                gap: 1rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .badge {
+                padding: 0.7rem 1.3rem;
+                font-size: 0.9rem;
+            }
+            
+            .language-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                margin-top: 1.5rem;
+            }
+            
+            .lang-button {
+                min-width: 300px;
+                padding: 1.2rem 2.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .logo-flags-container {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .text-column {
+                padding: 1.8rem;
+            }
+            
+            .text-column p {
+                font-size: 1rem;
+            }
+            
+            .lang-button {
+                min-width: 280px;
+                padding: 1.1rem 2.2rem;
+                font-size: 1.1rem;
+            }
+            
+            .flag-emoji {
+                font-size: 2.2rem;
+            }
+            
+            .flag-text {
+                font-size: 0.9rem;
+            }
+            
+            .footer-note {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo sutil -->
+    <div class="background-pattern"></div>
+    
+    <!-- Contenido principal -->
+    <div class="main-container">
+        <!-- Logo con banderas (más separadas) -->
+        <div class="logo-flags-container">
+            <div class="flag-left">
+                <a href="english.html" class="flag-link">
+                    <span class="flag-emoji">🇬🇧</span>
+                    <span class="flag-text">English</span>
+                </a>
+            </div>
+            
+            <img src="Escudo.jpg" alt="González Family Coat of Arms" class="main-logo">
+            
+            <div class="flag-right">
+                <a href="francais.html" class="flag-link">
+                    <span class="flag-emoji">🇫🇷</span>
+                    <span class="flag-text">Français</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Título principal -->
+        <h1 class="main-title">Jorge González, LL.M.</h1>
+        <p class="tagline">Happy Expats, Peaceful Businesses</p>
+        
+        <!-- Badges de credenciales (como Claude) -->
+        <div class="credentials-badges">
+            <span class="badge">LLM International Business Law</span>
+            <span class="badge">Master in Tax Law</span>
+            <span class="badge">MA European Studies</span>
+        </div>
+        
+        <!-- Dos columnas de texto (mejoradas) -->
+        <div class="two-columns-text">
+            <!-- Columna inglés -->
+            <div class="text-column">
+                <h3>Welcome</h3>
+                <p>With extensive knowledge in international law and deep understanding of expatriate challenges, I provide personalized solutions for individuals and businesses establishing themselves in Spain.</p>
+                <p>My practice focuses exclusively on serving the international community, offering clear guidance through tax optimization, residency planning, and legal compliance in English, French, and Spanish.</p>
+                <p>My approach combines legal expertise with a genuine understanding of the personal and professional transitions involved in relocating to a new country.</p>
+            </div>
+            
+            <!-- Columna francés -->
+            <div class="text-column">
+                <h3>Bienvenue</h3>
+                <p>Avec une connaissance approfondie du droit international et une compréhension des défis des expatriés, je propose des solutions personnalisées pour les particuliers et entreprises s'établissant en Espagne.</p>
+                <p>Ma pratique se concentre exclusivement sur la communauté internationale, offrant des conseils clairs en matière d'optimisation fiscale, de planification de résidence et de conformité légale en anglais, français et espagnol.</p>
+                <p>Mon approche combine expertise juridique et compréhension authentique des transitions personnelles et professionnelles liées à la relocalisation.</p>
+            </div>
+        </div>
+        
+        <!-- Botones de idioma (mejorados) -->
+        <div class="language-buttons">
+            <a href="english.html" class="lang-button">
+                <span class="lang-button-emoji">🇬🇧</span>
+                <span>Start Your Spanish Journey</span>
+            </a>
+            
+            <a href="francais.html" class="lang-button">
+                <span class="lang-button-emoji">🇫🇷</span>
+                <span>Commencer Votre Projet Espagnol</span>
+            </a>
+        </div>
+        
+        <!-- Nota al pie -->
+        <p class="footer-note">
+            Select your preferred language to access complete information about services, contact details, and professional background.
+        </p>
+    </div>
+</body>
+</html>
